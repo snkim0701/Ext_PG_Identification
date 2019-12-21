@@ -44,10 +44,10 @@ hold off
 clear all;  clc;
 
 % define a discrete system
-%y(t) = 1.5y(t-1) - 0.7y(t-2) + u(t-1) + 0.5u(t-2)
+% y(t) = 1.5y(t-1) - 0.7y(t-2) + u(t-1) + 0.5u(t-2)
 A = [1  -1.5  0.7];
 B = [0 1 0.5];
-sys0 = idpoly(A,B);
+sys0 = idpoly(A,B)
 
 % generate input and noise
 % input = random bianary sequence
@@ -67,7 +67,7 @@ y = sim(sys0,[u e]);
 z = [y,u];
 figure(3)
 idplot(z); grid on
-
+``
 % LSE 
 sys = arx(z,[2 2 1])
 
